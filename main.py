@@ -1,14 +1,16 @@
 class StudentsInMLOps:
     def __init__(self, name, roll_no):
+        self.strength = 0
         self.name = name
         self.roll_no = roll_no
         
-    def enrollStudents(self, roll_no):
-        self.strength += 1
-        self
-    def dropStudents(self, roll_no):
-        self.strength -= 1
-
+    def enrollStudents(self, count):
+        self.strength += count
+        return self.strength
+       
+    def dropStudents(self, count):
+        self.strength -= count
+        return self.strength
 
     def getTotalStrength(self):
         return self.strength 
