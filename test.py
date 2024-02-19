@@ -3,7 +3,7 @@ from main import StudentsInMLOps
 def test_enrollStudents():
     mlops = StudentsInMLOps("Samaha", "20I0424")
     mlops.enrollStudents(3)
-    assert mlops.get_total_strength() == 3
+    assert mlops.getTotalStrength() == 3
 
 def test_dropStudents():
     mlops = StudentsInMLOps("", "")
