@@ -1,11 +1,11 @@
 from main import StudentsInMLOps
 
-def test_enrollStudents(count):
+def test_enrollStudents():
     mlops = StudentsInMLOps("Samaha", "20I0424")
     mlops.enrollStudents(3)
     assert mlops.get_total_strength() == 3
 
-def test_dropStudents(count):
+def test_dropStudents():
     mlops = StudentsInMLOps("", "")
     mlops.enrollStudents(3)
     mlops.dropStudents(2)
