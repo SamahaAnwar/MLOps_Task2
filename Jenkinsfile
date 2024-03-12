@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage("Cloning the repository"){
             steps{
-                sh 'echo "Cloning the repository"'
+                echo "Cloning the repository"
                 checkout([$class: 'GitSCM', branches: [[name: '*/main']], 
                           userRemoteConfigs: [[url: 'https://github.com/SamahaAnwar/MLOps_Task2.git']]])
 
