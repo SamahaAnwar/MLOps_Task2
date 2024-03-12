@@ -12,7 +12,7 @@ pipeline{
         stage("Install Dependencies") {
             steps{
                 echo "Installing Dependencies"
-                bat 'pip3 install -r requirements.txt'
+                bat 'make install'
                 
             }
         }
