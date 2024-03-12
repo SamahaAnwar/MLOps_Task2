@@ -1,5 +1,7 @@
 pipeline{
-    agent any 
+    agent{
+        label 'linux'
+    } 
     stages{
         stage("Cloning the repository"){
             steps{
@@ -12,7 +14,7 @@ pipeline{
         stage("Install Dependencies") {
             steps{
                 echo "Installing Dependencies"
-                bat 'pip install -r requirements.txt'
+                sh 'pip install -r requirements.txt'
                 
             }
         }
