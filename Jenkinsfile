@@ -4,7 +4,7 @@ pipeline{
         stage("Cloning the repository"){
             steps{
                 echo "Cloning the repository"
-                git clone "https://github.com/SamahaAnwar/MLOps_Task2.git"
+                git url: "https://github.com/SamahaAnwar/MLOps_Task2.git"
             }
         }
         stage("Install Dependencies") {
