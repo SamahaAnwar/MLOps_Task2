@@ -23,7 +23,7 @@ pipeline{
         stage("Deployement"){
             steps{
                 sh 'echo "Deploying"'
-                dir(MLOps_Task2){
+                dir('MLOps_Task2'){
                     // Get the current branch name
                     def branchName = sh(script: 'git rev-parse --abbrev-ref HEAD', returnStdout: true).trim()
 
