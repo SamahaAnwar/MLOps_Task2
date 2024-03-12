@@ -29,10 +29,8 @@ pipeline{
                     // Check the branch name and deploy accordingly
                     if (branchName == 'main') {
                         echo "Deploying to production"
-                        // Add your production deployment commands here
                     } else {
                         echo "Deploying to UAT"
-                        // Add your UAT deployment commands here
                     }
                 }
             }
