@@ -4,7 +4,9 @@ pipeline{
         stage("Cloning the repository"){
             steps{
                 sh 'echo "Cloning the repository"'
-                sh 'git clone https://github.com/SamahaAnwar/MLOps_Task2.git'
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], 
+                          userRemoteConfigs: [[url: 'https://github.com/SamahaAnwar/MLOps_Task2.git']]])
+
             }
         }
         stage("Install Dependencies") {
@@ -23,7 +25,7 @@ pipeline{
         stage("Deployement"){
             steps{
                 sh 'echo "Deploying"'
-                dir('MLOps_Task2'){
+                script{
                     // Get the current branch name
                     def branchName = sh(script: 'git rev-parse --abbrev-ref HEAD', returnStdout: true).trim()
 
