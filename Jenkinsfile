@@ -3,8 +3,8 @@ pipeline{
     stages{
         stage("Cloning the repository"){
             steps{
-                bat 'echo "Cloning the repository"'
-                bat 'git url: "https://github.com/SamahaAnwar/MLOps_Task2.git"'
+                sh 'echo "Cloning the repository"'
+                sh 'git clone https://github.com/SamahaAnwar/MLOps_Task2.git'
             }
         }
         stage("Install Dependencies") {
@@ -23,7 +23,7 @@ pipeline{
         stage("Deployement"){
             steps{
                 sh 'echo "Deploying"'
-                script {
+                dir(MLOps_Task2){
                     // Get the current branch name
                     def branchName = sh(script: 'git rev-parse --abbrev-ref HEAD', returnStdout: true).trim()
 
